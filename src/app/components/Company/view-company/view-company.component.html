@@ -1,0 +1,114 @@
+<div class="outer">
+  <div class="row">
+    <div class="col-11 m-auto mt-5">
+        <mat-card class="shadow-lg rounded">
+            <mat-card-header>
+              <mat-card-title>All Companies</mat-card-title>
+              <!-- <mat-card-subtitle>Company Information</mat-card-subtitle> -->
+              <span class="filter"></span>
+
+              <!-- <a mat-mini-fab color="primary" [routerLink]="['/companycreate']"><mat-icon>add</mat-icon></a> -->
+
+              <a mat-mini-fab color="primary" (click)="companyCreate()"><mat-icon>add</mat-icon></a>
+
+
+              <!-- <button mat-mini-fab color="primary" (click)="openAddDialog()"><mat-icon>add</mat-icon></button> -->
+
+            </mat-card-header>
+
+
+            <mat-card-content class="p-3">
+              <div class="col-12 rounded shadow m-auto mat-elevation-z8">
+                
+                <mat-table [dataSource]="dataSource"  matSort>
+                  <!-- <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.companyId}}</mat-cell>
+                  </ng-container> -->
+                  <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.companyName}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="alias">
+                    <mat-header-cell *matHeaderCellDef>Alias</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.companyAlias}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="address">
+                    <mat-header-cell *matHeaderCellDef>Address</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.address}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="phone">
+                    <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.phone}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="fax">
+                    <mat-header-cell *matHeaderCellDef>Fax</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.fax}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="email">
+                    <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.email}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="website">
+                    <mat-header-cell *matHeaderCellDef>Website</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.website}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="registerNo">
+                    <mat-header-cell *matHeaderCellDef>Register No</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.companyRegisterNo}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="isActive">
+                    <mat-header-cell *matHeaderCellDef>Is Active</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.isActive}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="createBy">
+                    <mat-header-cell *matHeaderCellDef>Create By</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.createBy}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="createDate">
+                    <mat-header-cell *matHeaderCellDef>Create Date</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.createDate}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="updateBy">
+                    <mat-header-cell *matHeaderCellDef>Update By</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.updateBy}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="updateDate">
+                    <mat-header-cell *matHeaderCellDef>Update Date</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.updateDate}}</mat-cell>
+                  </ng-container>
+
+                  <ng-container matColumnDef="actions">
+
+                    <mat-header-cell *matHeaderCellDef class="justify-content-center">Actions</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                             
+
+                      <button mat-icon-button color="primary" (click)="openDetailsCompanyDialog(element.companyId)"><mat-icon>info</mat-icon></button>
+
+
+                      <!-- <button mat-icon-button color="primary" [routerLink]="['/companydetails', element.companyId]"><mat-icon>info</mat-icon></button> -->
+
+                      <button mat-icon-button (click)="companyUpdate(element)">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                      
+                      <!-- <button mat-icon-button [routerLink]="['/companyedit', element.companyId]"><mat-icon>edit</mat-icon></button> -->
+   
+                      <button mat-icon-button color="warn" (click)="confirmDelete(element)"><mat-icon>delete</mat-icon></button>
+                    </mat-cell>
+                  </ng-container>
+                  <mat-header-row *matHeaderRowDef="columnList"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: columnList;"></mat-row>
+                </mat-table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+              </div>
+            </mat-card-content>
+          </mat-card>
+    </div>
+</div>
+</div>
+
+   
+
+

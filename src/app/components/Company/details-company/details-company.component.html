@@ -1,0 +1,67 @@
+<div class="outer">
+    
+  <div class="row mat-table text-white" *ngIf="company">
+    <div class="col-8 m-auto rounded shadow-lg p-5">
+
+        <div class="row border-bottom m-2">
+            <h4 class="col-5">Company Name :</h4>
+            <h4 class="col-7">{{ company.companyName }}</h4>
+        </div>
+
+        <div class="row border-bottom m-2">
+            <h4 class="col-5">Company Alias :</h4>
+            <h4 class="col-7">{{ company.companyAlias }}</h4>
+        </div>
+
+        <div class="row border-bottom m-2">
+            <h4 class="col-5">Company Address :</h4>
+            <h4 class="col-7">{{ company.address }}</h4>
+        </div>
+
+        <div class="row border-bottom m-2">
+            <h4 class="col-5">Company Phone :</h4>
+            <h4 class="col-7">{{ company.phone }}</h4>
+        </div>
+
+        <div class="row border-bottom m-2">
+            <h4 class="col-5">Company Fax :</h4>
+            <h4 class="col-7">{{ company.fax }}</h4>
+        </div>
+
+        <div class="row border-bottom m-2">
+            <h4 class="col-5">Company Email :</h4>
+            <h4 class="col-7">{{ company.email }}</h4>
+        </div>
+
+        <div class="row border-bottom m-2">
+            <h4 class="col-5">Company Website :</h4>
+            <h4 class="col-7">{{ company.website }}</h4>
+        </div>
+
+        <div class="row border-bottom m-2">
+            <h4 class="col-5">Company Register No :</h4>
+            <h4 class="col-7">{{ company.companyRegisterNo }}</h4>
+        </div>
+
+        <div class="row border-bottom m-2">
+            <h4 class="col-5">Is Active? :</h4>
+            <h4 class="col-7">{{ company.isActive ? 'Yes' : 'No' }}</h4>
+        </div>
+
+        <div class="row border-bottom m-2">
+            <h4 class="col-5">Update By :</h4>
+            <h4 class="col-7">{{ company.updateBy }}</h4>
+        </div>
+
+
+        <div class="f-w d-flex justify-content-between p-4">
+            <a mat-button (click)="goToList()" (click)="onClose()" class="text-white"><mat-icon>arrow_back</mat-icon>Back to list</a>
+            <!-- <button mat-raised-button color="primary" (click)="goToList()">Back to List</button> -->
+            
+            <button mat-raised-button color="primary" (click)="onClose()" (click)="onInsert()">Add More</button>
+        </div>
+
+    </div>
+</div>
+
+</div>

@@ -1,0 +1,20 @@
+.outer {
+  min-height: 100vh;
+  background: #252839;
+}
+
+.card-container
+{
+    box-sizing:border-box;
+    width:1200px;
+    margin:25px auto 10px auto;
+    background: #252839;
+}
+.table-container {
+  box-sizing: border-box;
+  width: 1100px;
+  margin: 15px auto;
+}
+.filter{
+    flex:1 1 auto;
+}

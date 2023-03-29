@@ -1,0 +1,99 @@
+<div class="outer">
+  
+
+    <div class="text-container p-2">
+      <h1 class="text-white">Create A New Company</h1>
+    </div>
+    
+  
+    <!-- <div class="row">
+        <div class="col-6 m-auto">
+            <div class="d-flex justify-content-center">
+                <h1 class="px-3 pt-3 text-center" style="color: #01fe87; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Create A New Company</h1>
+
+                <!-- <button mat-button (click)="onClose()">Close</button> -->
+            <!-- </div>
+        </div>
+    </div> --> -->
+
+<form class="form-container p-3" [formGroup]="companyForm" style="background-color: #252839;">
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Company Name</mat-label>
+      <input matInput formControlName="companyName">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Company Alias</mat-label>
+      <input matInput formControlName="companyAlias">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="phone">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Fax</mat-label>
+      <input matInput formControlName="fax">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+      <mat-error *ngIf="f()['email'].hasError('email')">Invalid email format</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Website</mat-label>
+      <input matInput formControlName="website">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Company Register No.</mat-label>
+      <input matInput formControlName="companyRegisterNo">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Is Active</mat-label>
+      <mat-select formControlName="isActive">
+        <mat-option value="1">Yes</mat-option>
+        <mat-option value="0">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Created By</mat-label>
+      <input matInput formControlName="createBy">
+    </mat-form-field>
+
+    
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Create Date</mat-label>
+      <input matInput [matDatepicker]="createDate" formControlName="createDate">
+      <mat-datepicker-toggle matSuffix [for]="createDate"></mat-datepicker-toggle>
+      <mat-datepicker #createDate></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Updated By</mat-label>
+      <input matInput formControlName="updateBy">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="f-w">
+      <mat-label>Update Date</mat-label>
+      <input matInput [matDatepicker]="updateDate" formControlName="updateDate">
+      <mat-datepicker-toggle matSuffix [for]="updateDate"></mat-datepicker-toggle>
+      <mat-datepicker #updateDate></mat-datepicker>
+    </mat-form-field>
+
+    <div class="f-w d-flex justify-content-between">
+        <button [disabled]="companyForm.invalid" mat-raised-button type="submit" color="accent" (click)="insert()"><mat-icon>save_alt</mat-icon>Save</button>
+
+       
+        <button mat-raised-button type="button" color="primary" (click)="resetForm()"><mat-icon>refresh</mat-icon>Reset</button>
+
+        <a mat-button [routerLink]="['/companyview']" (click)="onClose()" class="text-white"><mat-icon>arrow_back</mat-icon>Back to list</a>
+
+        <!-- <button mat-raised-button color="primary" (click)="goToList()"><mat-icon>arrow_back</mat-icon>Back to List</button> -->
+        
+    </div>
+</form>
+  
+</div>

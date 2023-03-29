@@ -1,0 +1,52 @@
+.form-container
+{
+    width:65%;
+    margin:2px auto 10px auto;
+}
+.f-w{
+    width:100%;
+    margin-bottom:.5rem;
+}
+
+.outer {
+    min-height: 100vh;
+    background: #252839;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+.text-container {
+    text-align: center;
+    font-size: 48px;
+  }
+  
+  .text-container h1 {
+    display: inline-block;
+    position: relative;
+    animation: moveWord 30s infinite;
+  }
+  
+  
+  @keyframes moveWord {
+    0% {
+      transform: translateX(-70%);
+    }
+    
+    50% {
+        transform: translateX(70%);
+        color: cadetblue;
+    }
+      
+    100% {
+      transform: translateX(-70%);
+    }
+  }
+  
